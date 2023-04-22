@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word-Counter</title>
+    <style>
+
+
+     *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+     }
+    .container{
+        border: 2px solid #808080;
+        border-radius: 16px;
+       
+        }
+    h2{
+        background-color: rgba(10, 198, 198, 0.889);
+        height: 10vh;
+        border-radius: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }  
+    .class{
+        height: 6vh;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.4rem;
+        font-weight: 600;
+        margin-left: 14%;
+
+    }
+    #input{
+        height: 50vh;
+        width: 90%;
+        font-size: 21px;
+        font-weight: 550;
+        font-family: sans-serif;
+        margin-left: 5%;
+        padding: 10px 12px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Word And Character Counter</h2>
+        <div class="class">
+            Words : <span id="words"> 0 </span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            Characters : <span id="chars"> 0 </span>
+        </div>
+           
+            <input type = "text" id="input" value="">
+       
+        
+    </div>
+    
+<script>
+    const words = document.getElementById("words");
+    const chars = document.getElementById("chars");
+    const input = document.getElementById("input");
+    input.addEventListener('input', function(){
+       let text = this.value;
+       let char = text.length;
+       chars.innerHTML = char ;   
+       let splitwords = text.split(" ");
+       let word = splitwords.length;
+       words.innerHTML = word;
+
+    });
+
+</script>
+</body>
+</html>
